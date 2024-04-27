@@ -37,16 +37,26 @@ html {
   .container{
     width: 80%;
     height: 80%;
-    display: grid;
-    grid-template-areas: "title title title rates rates rates"
-                        "colton colton irene irene anne anne ";
     margin: 0 auto;
     position: absolute; top: 50%;left: 50%; transform: translate(-50%, -50%);
+    gap: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 3rem;
+  }
+
+  .above{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottom_part{
+    display: flex;
     gap: 2rem;
   }
 
-  .title{
-    grid-area: title;    
+  .space{
+    width: 50%;
   }
 
   h1{
@@ -64,7 +74,6 @@ html {
   }
 
   .rates{
-    grid-area: rates;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -105,12 +114,13 @@ html {
     font-size: 1.1rem;
     border-radius: 0.5rem;
     padding: 2rem;
-   /* width: 21em;
-    height: 15em; */
+    width: 21em;
+    height: 13em; 
   }
 
   .person{
     display: flex;
+    margin: -1rem 0;
   }
 
   .person img{
@@ -131,17 +141,9 @@ html {
     color: var(--clr-Soft-Pink);
   }
 
-  .colton{
-    grid-area: colton;
-  }
-
-  .irene{
-    grid-area: irene;
-  }
-
-  .anne{
-    grid-area: anne;
-  }
+    .endspace{
+    display: none;
+    }
   
 @media (width < 900px){
 
@@ -156,10 +158,10 @@ html {
     .container{
         width: 95%; height: 95%; gap: 1rem;
         display: flex;
-        flex-direction: column;
-       /* display: grid;
-        grid-template-areas: "title" "rates" 
-        "colton" "irene" "anne";*/
+        flex-direction: column;       
+    }
+    .above, .bottom_part{
+        display: block;
     }
     .title{
         text-align: center;
@@ -180,7 +182,9 @@ html {
         margin: 0.5rem 0 -0.5rem 0;padding: 0;
       }
     .card{
+        margin: 1.5rem 0;
         padding:0.6rem;
+        width: auto;height: auto;
     }
     #rate2, #rate3{
         margin-left: 0;
@@ -197,7 +201,12 @@ html {
     span img{
         padding: 0;
       }
-      
+      .space{
+        display: none;
+      }
+      .endspace{
+        display: block;
+      }
 }
 
 
